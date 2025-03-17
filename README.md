@@ -1,6 +1,6 @@
 ## Overview
 
-`WatchPass` was originally written during a time where account compromises were fairly frequent. Its primary functionality was to monitor an account for a password reset from the Support team. Over time, I started adding more functionality to it that would help us automate the process of containing O365 account compromise (and other identity) incidents ourselves.
+`WatchPass` was originally written during a time where account compromises were fairly frequent. Its primary functionality was to monitor an account for a password reset. Over time, I started adding more functionality to it that would help automate the process of containing O365 account compromise (and other identity) incidents.
 
 ## Prerequisites
 
