@@ -1,8 +1,3 @@
-
-## GitHub Repository
-
-At this time, there is no GitHub repo for `WatchPass`. If I do choose to create a repository for it, you will find it on my [GitHub](https://www.github.com/v0rt3chs?tab=repositories)
-
 ## Overview
 
 `WatchPass` was originally written during a time where account compromises were fairly frequent. Its primary functionality was to monitor an account for a password reset from the Support team. Over time, I started adding more functionality to it that would help us automate the process of containing O365 account compromise (and other identity) incidents ourselves.
