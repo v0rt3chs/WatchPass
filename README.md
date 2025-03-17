@@ -14,25 +14,25 @@
 
 - Watch for password reset for user at set interval of 30 seconds
 ```powershell
-.\WatchPass.ps1 -user cdawkins -refresh 30
+.\WatchPass.ps1 -user username -refresh 30
 ```
 If no refresh rate is specified, the default will be 120 seconds. After one hour, you will be asked if you would like `WatchPass` to reset the password for you. Doing password reset this way does *not* revoke sessions. The `-verbose` switch can be added to get updates at each `refresh` interval. If you are wanting to take a screenshot for documentation, leaving verbose out might be best in this case.
 
 - Reset user password
 ```powershell
-.\WatchPass.ps1 -user cdawkins -reset
+.\WatchPass.ps1 -user username -reset
 ```
 When `WatchPass` does a password reset, it prioritizes the Entra password reset first. It will try grabbing the UPN from on-prem AD right away though, so you may be prompted to manually input the user's email address if on-prem network connectivity cannot be established. As long as you have proper permissions in Entra, the Entra password reset will work smoothly. Then the On-prem password reset will kickoff using the same password sample. As long as you have permissions to reset the user's password and on-prem network connectivity, the password reset should work fine. As always the `-verbose` switch may be included to provide more details.
 
 - Revoke user sessions
 ```powershell
-.\WatchPass.ps1 -user cdawkins -revoke
+.\WatchPass.ps1 -user username -revoke
 ```
 There may be times where you only want to revoke a user's sessions. This may be preferred after a user's password has already been reset by another IT department member. `WatchPass` will try to establish *your* email address using on-prem AD, if for some reason you are not in the office or on the on-prem network, you will need to enter your own email address. This is used to connect you to the AzureAD PowerShell module. Another check for the user's UPN will occur on-prem, you may have to manually enter the email address if `WatchPass` cannot get it for you. The `-verbose` switch can be added for status updates and more info.
 
 - Contain user account
 ```powershell
-.\WatchPass.ps1 -user cdawkins -contain
+.\WatchPass.ps1 -user username -contain
 ```
 Many times you will want to both reset the password and revoke user sessions to fully contain an account compromise. Passing the `-contain` switch will function the same as passing both the `-reset` and `-revoke` switches together. The password resets will always be processed before containment.
 
